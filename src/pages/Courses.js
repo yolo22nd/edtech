@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../config/firebase";
 import { getDocs, collection } from "firebase/firestore";
+import Navbar from "../components/Navbar";
 
 const Courses = () => {
   const [courseList, setCourseList] = useState([]);
@@ -24,6 +25,8 @@ const Courses = () => {
   }, []);
 
   return (
+    <>
+      <Navbar/>
     <div className="container mx-auto my-8">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {courseList.map((course) => (
@@ -42,6 +45,7 @@ const Courses = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

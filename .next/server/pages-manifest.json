@@ -1,0 +1,11 @@
+{
+  "/Checkout": "pages/Checkout.js",
+  "/CourseDetails": "pages/CourseDetails.js",
+  "/Courses": "pages/Courses.js",
+  "/Landing2": "pages/Landing2.js",
+  "/Landing": "pages/Landing.js",
+  "/Login": "pages/Login.js",
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js"
+}

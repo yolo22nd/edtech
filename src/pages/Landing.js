@@ -1,5 +1,5 @@
 import React ,{useState} from 'react'
-import Naavbar2 from '../components/Navbar.js'
+import Navbar from '../components/Navbar.js'
 import Animation from'../assets/img/Business Analysis.gif'
 import Star from'../assets/img/5 Star Rating.gif'
 import Ai from'../assets/img/aii.png'
@@ -10,15 +10,10 @@ import "slick-carousel/slick/slick-theme.css";
 import Accordian from '../components/Accordian.js';
 import { useNavigate } from 'react-router-dom'
 import { TypeAnimation } from 'react-type-animation';
-import { AuthContext } from '../context/AuthContext.js'
-import { useContext } from 'react'
 import Footer from '../components/Footer.js'
 
 
 const Home = () => {
-  const { user } = useContext(AuthContext);
-
-
   
 
     var settings = {
@@ -30,7 +25,7 @@ const Home = () => {
         autoplay: true, // Enable automatic sliding
         autoplaySpeed: 3000,
       };
-      const navigate=useNavigate();
+      // const navigate=useNavigate();
       const accordionItems = [
         {
           title: 'What is a product comparison website?',
@@ -91,7 +86,7 @@ const Home = () => {
 
   return (
     <div>
-      <Naavbar2/>
+      <Navbar/>
 
       <div className='h-screen flex'>
         <div className='w-[50%] pt-52 h-screen flex  flex-col pl-6'>

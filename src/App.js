@@ -1,26 +1,29 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-import PrivateRoute from "./components/PrivateRoute";
-import Navbar from './components/Navbar';
-import Landing from './pages/Landing';
+import Login from './pages/Login';
+import Home from './pages/Landing';
 import Courses from './pages/Courses';
 import CourseDetails from './pages/CourseDetails';
-import Login from './pages/Login';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/courses" element={<PrivateRoute><Courses /></PrivateRoute>} />
-          <Route path="/courses/:id" element={<PrivateRoute><CourseDetails /></PrivateRoute>} />
-        </Routes>
-      </Router>
-    </AuthProvider>
+    <div className="App">
+      <BrowserRouter>
+        <AuthProvider>
+          <Routes>
+            <Route element={<PrivateRoute />}>
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/courses/:id" element={<CourseDetails />} />
+            </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </AuthProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 
